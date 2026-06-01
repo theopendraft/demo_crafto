@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from "react";
-import trainerPhoto from "../public/demo-gym-and-fitness-home-15.jpg";
+import photo14 from "../../assets-crafto-2026-06-01/JPG/TrainerShowcase/demo-gym-and-fitness-home-14.jpg";
+import photo15 from "../../assets-crafto-2026-06-01/JPG/TrainerShowcase/demo-gym-and-fitness-home-15.jpg";
+import photo16 from "../../assets-crafto-2026-06-01/JPG/TrainerShowcase/demo-gym-and-fitness-home-16.jpg";
 
 const trainers = [
-  { number: "01", name: "Matthew Taylor", role: "Strength Training", rating: "5.0", reviews: "2,070 Reviews", description: "Lorem ipsum dolor sit amet consectetur adipiscing placerat vestibulum vivamus eget ante leo.", socials: ["Fb", "Ig", "Tw"] },
-  { number: "02", name: "Jeremy Dupont", role: "Crossfit Coach", rating: "4.9", reviews: "1,640 Reviews", description: "High-energy training focused on performance, endurance, and total body resilience for all levels.", socials: ["Fb", "Ig", "Tw"] },
-  { number: "03", name: "Daniel James", role: "Personal Training", rating: "4.8", reviews: "1,895 Reviews", description: "Personalized coaching tailored to your goals with precise form guidance and motivation.", socials: ["Fb", "Ig", "Tw"] },
+  { number: "01", name: "Matthew Taylor", role: "Strength Training", rating: "5.0", reviews: "2,070 Reviews", description: "Lorem ipsum dolor sit amet consectetur adipiscing placerat vestibulum vivamus eget ante leo.", socials: ["Fb", "Ig", "Tw"], photo: photo14 },
+  { number: "02", name: "Jeremy Dupont", role: "Crossfit Coach", rating: "4.9", reviews: "1,640 Reviews", description: "High-energy training focused on performance, endurance, and total body resilience for all levels.", socials: ["Fb", "Ig", "Tw"], photo: photo15 },
+  { number: "03", name: "Daniel James", role: "Personal Training", rating: "4.8", reviews: "1,895 Reviews", description: "Personalized coaching tailored to your goals with precise form guidance and motivation.", socials: ["Fb", "Ig", "Tw"], photo: photo16 },
 ];
 
 export default function TrainerShowcase() {
@@ -116,7 +118,7 @@ export default function TrainerShowcase() {
 
                     {/* Photo */}
                     <div className="group relative min-h-[280px] overflow-hidden border-l border-[#E5E7EB]">
-                      <img src={trainerPhoto} alt={trainer.name}
+                      <img src={trainer.photo} alt={trainer.name}
                         className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]"
                         loading="lazy" />
                       <span

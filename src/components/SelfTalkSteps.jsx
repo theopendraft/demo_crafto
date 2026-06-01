@@ -1,3 +1,4 @@
+import { useRef, useEffect } from "react";
 import mainImage from "../public/demo-gym-and-fitness-home-11.jpg.webp";
 import sideCardImage from "../public/demo-gym-and-fitness-slider-table-03.jpg.webp";
 
@@ -23,18 +24,50 @@ const steps = [
 ];
 
 export default function SelfTalkSteps() {
+  const sectionRef   = useRef(null);
+  const watermarkRef = useRef(null);
+
+  useEffect(() => {
+    let raf;
+    const tick = () => {
+      if (!sectionRef.current || !watermarkRef.current) return;
+      const rect     = sectionRef.current.getBoundingClientRect();
+      // 0 = section bottom hits viewport bottom, 1 = section top hits viewport top
+      const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+      const clamped  = Math.max(0, Math.min(1, progress));
+      // Drift: right → left as section scrolls through viewport
+      const x = (0.5 - clamped) * 300;
+      watermarkRef.current.style.transform = `translateX(calc(-50% + ${x}px))`;
+    };
+
+    const onScroll = () => {
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(tick);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    tick();
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
   return (
-    <section className="relative overflow-hidden bg-white py-20 text-[#111111]">
-      {/* Background watermark */}
+    <section ref={sectionRef} className="relative overflow-hidden bg-white py-20 text-[#111111]">
+      {/* Background watermark — parallax on scroll */}
       <div
-        className="pointer-events-none absolute bottom-64 left-1/4 hidden text-[#111111] lg:block"
+        ref={watermarkRef}
+        className="pointer-events-none absolute top-1/2 left-1/2 hidden whitespace-nowrap text-[#111111] lg:block"
         style={{
           fontFamily: "var(--font-korolev-condensed)",
-          fontSize: "clamp(80px, 11vw, 150px)",
+          fontSize: "clamp(80px, 13vw, 180px)",
           fontWeight: 900,
           letterSpacing: "0.08em",
           opacity: 0.04,
           userSelect: "none",
+          willChange: "transform",
+          transform: "translateX(-50%)",
         }}
       >
         EXERCISE

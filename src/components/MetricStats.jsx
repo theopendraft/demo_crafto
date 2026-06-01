@@ -18,8 +18,7 @@ export default function MetricStats() {
           className="flex flex-wrap items-center justify-between gap-6 border-b border-[#E5E7EB] pb-8">
           <div className="flex items-center gap-4">
             <img src={profileImage} alt="Expert instructors"
-              className="h-16 w-16 flex-shrink-0 rounded-full object-cover ring-2 ring-[#E5E7EB] transition-transform hover:scale-105"
-              loading="lazy" />
+              className="" />
             <p className="text-sm text-[#6B7280]" style={{ fontFamily: "var(--font-urbanist)" }}>
               Fitness courses from{" "}
               <span className="font-semibold text-[#111111] underline underline-offset-2">experts</span>.

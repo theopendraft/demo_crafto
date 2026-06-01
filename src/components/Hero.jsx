@@ -10,21 +10,21 @@ export default function Hero() {
 
         {/* ── LEFT PANEL — wipes in from left on load ── */}
         <div
-          className="hero-panel-reveal relative col-span-1 overflow-hidden bg-white lg:col-span-7"
+          className="hero-panel-reveal relative col-span-1 overflow-hidden bg-gradient-to-r from-gray-300 to-white lg:col-span-7"
           style={{ minHeight: "90vh" }}
         >
           {/* WORKOUT vertical watermark */}
           <div
-            className="pointer-events-none absolute inset-y-0 left-6 hidden lg:flex items-center justify-center z-0"
+            className="pointer-events-none absolute inset-y-0 left-2 hidden lg:flex items-center justify-center z-0"
             style={{ width: "3.5rem" }}
           >
             <span
               style={{
                 fontFamily: "var(--font-korolev-condensed)",
-                fontSize: "clamp(90px, 11vw, 150px)",
+                fontSize: "clamp(190px, 11vw, 350px)",
                 fontWeight: 900,
                 lineHeight: 1,
-                color: "rgba(17,17,17,0.05)",
+                color: "rgb(233, 233, 233)",
                 letterSpacing: "0.1em",
                 writingMode: "vertical-rl",
                 transform: "rotate(180deg)",

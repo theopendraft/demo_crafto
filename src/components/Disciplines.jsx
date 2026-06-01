@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import circularLabelImage from "../public/demo-gym-and-fitness-home-04.png.webp";
-import strengthImage from "../public/demo-gym-and-fitness-home-06.jpg.webp";
-import crossfitImage from "../public/demo-gym-and-fitness-home-15.jpg";
-import balanceImage from "../public/demo-gym-and-fitness-home-11.jpg.webp";
-import cardioImage from "../public/demo-gym-and-fitness-slider-table-03.jpg.webp";
-import meditationImage from "../public/demo-gym-and-fitness-slider-table-01.jpg.webp";
+import centerLabelImage from "../../assets-crafto-2026-06-01/PNG/demo-gym-and-fitness-home-05.png";
+import strengthImage from "../../assets-crafto-2026-06-01/JPG/disciplines/demo-gym-and-fitness-home-06.jpg";
+import crossfitImage from "../../assets-crafto-2026-06-01/JPG/disciplines/demo-gym-and-fitness-home-07.jpg";
+import balanceImage from "../../assets-crafto-2026-06-01/JPG/disciplines/demo-gym-and-fitness-home-08.jpg";
+import cardioImage from "../../assets-crafto-2026-06-01/JPG/disciplines/demo-gym-and-fitness-home-09.jpg";
+import meditationImage from "../../assets-crafto-2026-06-01/JPG/disciplines/demo-gym-and-fitness-home-10.jpg";
 
 const slides = [
   { label: "Strength",  kicker: "Upstanding strength",    title: "Strength training benefits for you",  description: "Our primary goal is to create awareness and easy access to keep your body strong and resilient.", watermark: "Strength",  image: strengthImage  },
@@ -54,8 +55,8 @@ export default function Disciplines() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-white py-16 text-[#111111]">
-      <div className="mx-auto w-full max-w-7xl px-6">
+    <section ref={sectionRef} className="bg-white py-28 lg:py-40 text-[#111111]">
+      <div className="mx-auto w-full max-w-full">
         <div data-anim="up" className="relative pt-14 pl-10 lg:pt-16 lg:pl-14">
 
           {/* Circular badge — rotates on scroll */}
@@ -68,22 +69,29 @@ export default function Disciplines() {
               style={{ willChange: "transform", transform: "rotate(0deg)" }}
               loading="lazy"
             />
+            {/* Center image inside the circular badge */}
+            <img
+              src={centerLabelImage}
+              alt="Center label"
+              className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-10 w-10 rounded-full object-contain lg:h-20 lg:w-20"
+              loading="lazy"
+            />
           </div>
 
           {/* Main card */}
-          <div className="overflow-hidden rounded-sm border border-[#E5E7EB]">
+          <div className="overflow-hidden rounded-sm border border-[#E5E7EB] h-full">
 
             {/* Content panels */}
-            <div className="grid grid-cols-1 lg:grid-cols-2">
+            <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
 
               {/* LEFT: text + pricing */}
-              <div className="bg-[#F6F7F5] p-8 sm:p-10 lg:p-12">
+              <div className="bg-[#F6F7F5] p-8 sm:p-10 lg:p-12 flex flex-col justify-center h-full">
                 <div className="inline-flex flex-col items-start">
                   <p className="text-sm font-semibold text-[#111111]"
                     style={{ fontFamily: "var(--font-urbanist)" }}>
                     {active.kicker}
                   </p>
-                  <span className="mt-0.5 h-0.5 w-full bg-[#A3E635] transition-all duration-300" />
+                  <span className="mt-0.5 h-0.5 w-32 bg-[#A3E635] transition-all duration-300" />
                 </div>
 
                 <h2
@@ -102,7 +110,7 @@ export default function Disciplines() {
                 <div className="mt-8 rounded-xl border border-[#E5E7EB] bg-white p-5 transition-shadow hover:shadow-md">
                   <div className="flex items-center justify-between gap-3">
                     <p className="text-sm text-[#111111]" style={{ fontFamily: "var(--font-urbanist)" }}>
-                      Yearly <span className="text-base font-semibold">$499.00</span>
+                      Yearly <span className="text-base font-semibold">$699.00</span>
                     </p>
                     <span className="rounded-full bg-[#A3E635] px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-[#111111]">
                       SAVE 20%
@@ -115,13 +123,13 @@ export default function Disciplines() {
                   <span className="font-semibold underline underline-offset-4">first payment today</span> and start now.
                 </p>
 
-                <button className="btn-glow mt-6 rounded-md bg-[#111111] px-6 py-3 text-[11px] font-black uppercase tracking-[0.3em] text-white">
+                <button className="btn-glow w-44 mt-6 rounded-md bg-[#111111] px-6 py-3 text-[11px] font-black uppercase tracking-[0.3em] text-white">
                   JOIN TODAY!
                 </button>
               </div>
 
               {/* RIGHT: image */}
-              <div className="group relative min-h-[300px] overflow-hidden bg-[#E8EEE9] lg:min-h-[480px]">
+              <div className="group relative min-h-[380px] overflow-hidden bg-[#E8EEE9] lg:min-h-[620px]">
                 <img
                   key={active.label}
                   src={active.image}

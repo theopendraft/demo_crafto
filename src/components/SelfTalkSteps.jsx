@@ -1,188 +1,203 @@
-import mainSlideImage from "../public/demo-gym-and-fitness-home-11.jpg.webp";
+import mainImage from "../public/demo-gym-and-fitness-home-11.jpg.webp";
 import sideCardImage from "../public/demo-gym-and-fitness-slider-table-03.jpg.webp";
 
+const faqItems = [
+  {
+    question: "How to raise overall fitness level?",
+    answer: "Our mission is to provide you with the ultimate fitness experience — structured programs, expert coaches, and progress tracking that keeps you moving forward.",
+  },
+  {
+    question: "Can we get a natural way to health?",
+    answer: "Yes. Consistent training combined with proper nutrition and active recovery is the most effective and sustainable path to lasting natural health.",
+  },
+  {
+    question: "Can I get a special trainer for yoga?",
+    answer: "Absolutely. We offer dedicated yoga and mindfulness coaches who tailor sessions to your flexibility level and personal wellness goals.",
+  },
+];
+
 const steps = [
-  {
-    number: "01",
-    title: "Treat yourself",
-    text: "Our subconscious mind hears the self-talk."
-  },
-  {
-    number: "02",
-    title: "Stay positive",
-    text: "Learn to release negative thoughts about your body."
-  },
-  {
-    number: "03",
-    title: "Love yourself",
-    text: "Focusing on body loving and caring for yourself."
-  }
+  { number: "01", title: "Treat yourself",  text: "Our subconscious mind hears the self-talk and responds accordingly." },
+  { number: "02", title: "Stay positive",   text: "Learn to release negative thoughts about your body and embrace progress." },
+  { number: "03", title: "Love yourself",   text: "Focusing on body love and caring for yourself builds lasting strength." },
 ];
 
 export default function SelfTalkSteps() {
   return (
     <section className="relative overflow-hidden bg-white py-20 text-[#111111]">
-      <div className="pointer-events-none absolute left-30 bottom-64 hidden text-[160px] font-black uppercase text-[#111111]/5 lg:block">
-        <span className="font-[var(--font-korolev-condensed)] tracking-[0.08em]">
-          EXERCISE
-        </span>
+      {/* Background watermark */}
+      <div
+        className="pointer-events-none absolute bottom-64 left-1/4 hidden text-[#111111] lg:block"
+        style={{
+          fontFamily: "var(--font-korolev-condensed)",
+          fontSize: "clamp(80px, 11vw, 150px)",
+          fontWeight: 900,
+          letterSpacing: "0.08em",
+          opacity: 0.04,
+          userSelect: "none",
+        }}
+      >
+        EXERCISE
       </div>
 
-      <div className="mx-auto w-full max-w-6xl px-6">
-        <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] justify-items-center">
-          <div className="relative">
-            <img
-              src={mainSlideImage}
-              alt="Workout session" 
-              className="h-full w-full rounded-sm object-cover"
-              loading="lazy"
-            />
+      <div className="mx-auto w-full max-w-7xl px-6">
 
-            <div className="absolute -left-4 bottom-8 w-44 overflow-hidden rounded-md border border-[#E5E7EB] bg-white shadow-lg">
-              <div className="relative m-4 h-24 w-auto overflow-hidden rounded-md bg-[#E5E7EB]">
-                <img
-                  src={sideCardImage}
-                  alt="Morning run preview"
-                  className="absolute inset-0 h-full w-full object-cover"
-                  loading="lazy"
-                />
+        {/* ── TOP: image + FAQ ── */}
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
+
+          {/* LEFT: photo — slides in from left */}
+          <div data-anim="left" className="relative">
+            <div className="group overflow-hidden rounded-sm">
+              <img
+                src={mainImage}
+                alt="Athlete in the gym"
+                className="w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                style={{ aspectRatio: "3/4", maxHeight: "560px", objectPosition: "top" }}
+                loading="lazy"
+              />
+            </div>
+
+            {/* Floating activity card */}
+            <div className="card-lift absolute -left-4 bottom-8 w-48 overflow-hidden rounded-xl border border-[#E5E7EB] bg-white shadow-xl sm:-left-6">
+              <div className="relative mx-4 mt-4 h-24 overflow-hidden rounded-lg bg-[#E5E7EB]">
+                <img src={sideCardImage} alt="Morning run preview"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+                  loading="lazy" />
                 <button
-                  className="absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#111111] shadow"
+                  className="absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow transition-transform hover:scale-110"
                   aria-label="Play preview"
                 >
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 10 10"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
                     <path d="M2 1.5L8 5L2 8.5V1.5Z" fill="#111111" />
                   </svg>
                 </button>
               </div>
-
-              <div className="">
-                <div className="flex items-center justify-between gap-3 px-4">
+              <div className="px-4 py-3">
+                <div className="flex items-center justify-between gap-2">
                   <div>
-                    <p className="font-[var(--font-urbanist)] text-sm font-semibold text-[#111111]">
-                      Everyday
-                    </p>
-                    <p className="font-[var(--font-urbanist)] text-sm font-semibold text-[#111111]">morning run</p>
+                    <p className="text-[13px] font-semibold leading-tight text-[#111111]"
+                      style={{ fontFamily: "var(--font-urbanist)" }}>Everyday</p>
+                    <p className="text-[13px] font-semibold leading-tight text-[#111111]"
+                      style={{ fontFamily: "var(--font-urbanist)" }}>morning run</p>
                   </div>
-                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--color-fitness-neon)]/25">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M12 21C15.5 17.2 18 14.5 18 11.5C18 8.46 15.54 6 12.5 6C9.46 6 7 8.46 7 11.5C7 14.5 9.5 17.2 13 21"
-                        stroke="#111111"
-                        strokeWidth="1.4"
-                      />
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#A3E635]/20 transition-colors hover:bg-[#A3E635]/40">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 21C15.5 17.2 18 14.5 18 11.5C18 8.46 15.54 6 12.5 6C9.46 6 7 8.46 7 11.5C7 14.5 9.5 17.2 13 21" stroke="#111111" strokeWidth="1.4" />
                       <circle cx="12" cy="11.5" r="2" fill="#111111" />
                     </svg>
                   </div>
                 </div>
-
-                <div className="mt-3 flex items-center gap-2 bg-[#111111] px-3 py-2">
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M12 21C15.5 17.2 18 14.5 18 11.5C18 8.46 15.54 6 12.5 6C9.46 6 7 8.46 7 11.5C7 14.5 9.5 17.2 13 21" stroke="#A3E635" strokeWidth="1.6" />
-                    <circle cx="12" cy="11.5" r="2" fill="#A3E635" />
-                  </svg>
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white">
-                    Activity tracker
-                  </span>
-                </div>
+              </div>
+              <div className="flex items-center gap-2 bg-[#111111] px-3 py-2">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 21C15.5 17.2 18 14.5 18 11.5C18 8.46 15.54 6 12.5 6C9.46 6 7 8.46 7 11.5C7 14.5 9.5 17.2 13 21" stroke="#A3E635" strokeWidth="1.6" />
+                  <circle cx="12" cy="11.5" r="2" fill="#A3E635" />
+                </svg>
+                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white"
+                  style={{ fontFamily: "var(--font-urbanist)" }}>Activity tracker</span>
               </div>
             </div>
           </div>
 
-          <div className="space-y-6">
-            <span className="font-bold inline-block border-b-2 border-[var(--color-fitness-neon)] pb-1">
-              
-              Flexibility and patience
-            </span>
-            <h2 className="font-[var(--font-korolev-condensed)] text-4xl font-black leading-[1.05] sm:text-5xl">
+          {/* RIGHT: eyebrow + FAQ — slides in from right */}
+          <div data-anim="right" className="space-y-6 lg:pt-4">
+            <div className="inline-flex flex-col items-start">
+              <p className="text-sm font-semibold text-[#111111]"
+                style={{ fontFamily: "var(--font-urbanist)" }}>Flexibility and patience</p>
+              <span className="mt-0.5 h-0.5 w-full bg-[#A3E635]" />
+            </div>
+
+            <h2 className="text-[38px] font-black leading-[1.02] sm:text-[48px] lg:text-[52px]"
+              style={{ fontFamily: "var(--font-korolev-condensed)" }}>
               Fitness you enjoy
-              <br />
-              with our workout
-              <span className="text-[var(--color-fitness-neon)]">.</span>
+              <br />with our workout<span style={{ color: "#A3E635" }}>.</span>
             </h2>
 
-            <div className="space-y-5 rounded-2xl border-0 bg-gradient-to-br from-[#FFFFEF] to-white p-6">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="font-[var(--font-urbanist)] text-sm font-semibold text-[#111111]">
-                    How to raise over all fitness level?
-                  </p>
-                  <p className="mt-2 text-sm text-[#6B7280]">
-                    Our mission is to provide you with the ultimate great fitness experience.
-                  </p>
+            {/* FAQ accordion — expands on hover */}
+            <div className="divide-y divide-[#E5E7EB] rounded-xl border border-[#E5E7EB]">
+              {faqItems.map((item, i) => (
+                <div
+                  key={i}
+                  className="group cursor-default px-5 pt-5 pb-4 transition-colors duration-200 hover:bg-[#F9FAFB]"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    {/* Question + sliding answer */}
+                    <div className="flex-1">
+                      <p
+                        className="text-sm font-semibold text-[#111111]"
+                        style={{ fontFamily: "var(--font-urbanist)" }}
+                      >
+                        {item.question}
+                      </p>
+
+                      {/* Answer expands on hover via max-height transition */}
+                      <div className="max-h-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-32">
+                        <p
+                          className="mt-2 text-sm leading-[1.7] text-[#6B7280]"
+                          style={{ fontFamily: "var(--font-urbanist)" }}
+                        >
+                          {item.answer}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* + icon rotates 45° → × on hover */}
+                    <div className="mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-[#E5E7EB] transition-all duration-300 group-hover:rotate-45 group-hover:border-[#A3E635] group-hover:bg-[#A3E635]/10">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <path d="M6 2.5V9.5M2.5 6H9.5" stroke="#111111" strokeWidth="1.4" strokeLinecap="round" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
-                <div className="h-10 w-10 rounded-full border border-[#E5E7EB]" />
-              </div>
-              <div className="font-bold pt-4 text-sm text-[#6B7280]">
-                How can we get natural way to health?
-              </div>
-              <div className="font-bold text-sm text-[#6B7280]">Can get a special trainer for yoga?</div>
+              ))}
             </div>
           </div>
         </div>
 
-        <div className="mt-16 grid items-start lg:grid-cols-[1.1fr_repeat(3,1fr)] gap-10">
-          <div className="">
-            <p className="font-[var(--font-korolev-condensed)] text-4xl font-black leading-[1.05]">
-              Learning how to love your body
-              <span className="text-[var(--color-fitness-neon)]">.</span>
+        {/* ── BOTTOM: intro + Steps ── */}
+        <div className="mt-20 grid gap-8 lg:grid-cols-[1.1fr_repeat(3,1fr)] lg:items-start">
+
+          {/* Intro */}
+          <div data-anim="up">
+            <p className="text-[34px] font-black leading-[1.05] sm:text-[40px]"
+              style={{ fontFamily: "var(--font-korolev-condensed)" }}>
+              Learning how to
+              <br />love your body<span style={{ color: "#A3E635" }}>.</span>
             </p>
-            <h3 className="mt-2 font-[var(--font-korolev-condensed)] text-4xl font-black leading-[1.05]">
-              
-              
-            </h3>
-            <div className="mt-4 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-[#111111]">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-fitness-neon)]/20">
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.5 3.5H9.5C10.05 3.5 10.5 3.95 10.5 4.5V7.5C10.5 8.05 10.05 8.5 9.5 8.5H7.5C7.5 11.54 10.46 14.5 13.5 14.5V12.5C13.5 11.95 13.95 11.5 14.5 11.5H17.5C18.05 11.5 18.5 11.95 18.5 12.5V15.5C18.5 16.05 18.05 16.5 17.5 16.5H16.5C10.98 16.5 7.5 13.02 7.5 7.5V6.5C7.5 5.95 7.05 5.5 6.5 5.5H4.5C3.95 5.5 3.5 5.05 3.5 4.5V3.5C3.5 2.95 3.95 2.5 4.5 2.5H6.5"
-                    stroke="#111111"
-                    strokeWidth="1.6"
-                  />
+            <button className="group mt-5 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-[#111111] transition-opacity hover:opacity-70">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#A3E635]/20 transition-colors group-hover:bg-[#A3E635]/40">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#111111" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </span>
               <span>Call for joining</span>
-            </div>
+            </button>
           </div>
-          
-          {steps.map((step) => (
-            <div key={step.number} className="relative space-y-2 pt-6 gap-6">
-              
 
-              <p className="pb-4 text-[52px] font-black leading-none text-[var(--color-fitness-neon)]/0 [-webkit-text-stroke:1.5px_var(--color-fitness-neon)]">
+          {/* Steps — staggered */}
+          {steps.map((step, i) => (
+            <div
+              key={step.number}
+              data-anim="up"
+              data-delay={String((i + 1) * 120)}
+              className="group border-t-2 border-[#E5E7EB] pt-6 transition-colors hover:border-[#A3E635]"
+            >
+              <p
+                className="text-[52px] font-black leading-none transition-all duration-300"
+                style={{
+                  fontFamily: "var(--font-korolev-condensed)",
+                  color: "transparent",
+                  WebkitTextStroke: "1.5px #A3E635",
+                }}
+              >
                 {step.number}
               </p>
-              <p className="absolute left-0 bottom-12 font-[var(--font-urbanist)] text-base font-semibold text-[#111111] px-4">
-                {step.title}
-              </p>
-              <p className="text-sm text-[#6B7280] ">{step.text}</p>
+              <p className="mt-4 text-base font-semibold text-[#111111]"
+                style={{ fontFamily: "var(--font-urbanist)" }}>{step.title}</p>
+              <p className="mt-2 text-sm leading-[1.65] text-[#6B7280]"
+                style={{ fontFamily: "var(--font-urbanist)" }}>{step.text}</p>
             </div>
           ))}
-          
         </div>
       </div>
     </section>

@@ -1,122 +1,155 @@
 import heroImage from "../public/demo-gym-and-fitness-slider-table-01.jpg.webp";
+import previewImage from "../public/demo-gym-and-fitness-slider-table-02.jpg.webp";
 import NavBar from "./NavBar";
 
 export default function Hero() {
-  const previewImage =
-    "https://images.unsplash.com/photo-1546484959-f21f98ebec3a?auto=format&fit=crop&w=600&q=80";
-
   return (
     <section className="relative w-full bg-white text-[#111111]">
-      <div className="relative w-full min-h-screen grid grid-cols-1 lg:grid-cols-12 bg-white">
+      <div className="relative w-full grid grid-cols-1 lg:grid-cols-12" style={{ minHeight: "100svh" }}>
         <NavBar />
 
-        <div className="relative col-span-1 min-h-screen bg-white lg:col-span-7">
-          <div className="relative h-full px-6 pb-12 pt-28 lg:pt-32 lg:pr-12">
-            <div className="pointer-events-none absolute -left-48 top-16 -z-10 hidden lg:block">
-              <span className="type-large-title block -rotate-90 text-[#111111]/10">
-                WORKOUT
-              </span>
-            </div>
-            <div className="flex h-full items-center px-28">
-            <div className="max-w-xl">
-              <div className="inline-flex items-center gap-4 rounded-[6px] bg-black/5 px-4 py-2">
+        {/* ── LEFT PANEL — wipes in from left on load ── */}
+        <div
+          className="hero-panel-reveal relative col-span-1 overflow-hidden bg-white lg:col-span-7"
+          style={{ minHeight: "90vh" }}
+        >
+          {/* WORKOUT vertical watermark */}
+          <div
+            className="pointer-events-none absolute inset-y-0 left-6 hidden lg:flex items-center justify-center z-0"
+            style={{ width: "3.5rem" }}
+          >
+            <span
+              style={{
+                fontFamily: "var(--font-korolev-condensed)",
+                fontSize: "clamp(90px, 11vw, 150px)",
+                fontWeight: 900,
+                lineHeight: 1,
+                color: "rgba(17,17,17,0.05)",
+                letterSpacing: "0.1em",
+                writingMode: "vertical-rl",
+                transform: "rotate(180deg)",
+                whiteSpace: "nowrap",
+              }}
+            >
+              WORKOUT
+            </span>
+          </div>
+
+          {/* Content */}
+          <div className="relative z-10 flex h-full items-center px-6 pb-12 pt-28 lg:pl-24 lg:pr-10 lg:pt-40">
+            <div className="w-full max-w-lg">
+
+              {/* WOW badge */}
+              <div className="hero-in hero-d1 inline-flex items-center gap-3 rounded-[6px] bg-black/5 px-4 py-2">
                 <span className="rounded-[4px] bg-[#111111] px-3 py-1 text-[10px] font-black uppercase tracking-[0.3em] text-white">
                   WOW
                 </span>
-                <span className="font-[var(--font-urbanist)] text-[11px] uppercase tracking-[0.25em] text-[#111111]">
+                <span
+                  className="text-[11px] uppercase tracking-[0.25em] text-[#111111]"
+                  style={{ fontFamily: "var(--font-urbanist)" }}
+                >
                   GET MORE BENEFIT BY JOINING
                 </span>
               </div>
 
-              <h1 className="mt-8 font-[var(--font-korolev-condensed)] text-[52px] font-black leading-[0.98] sm:text-[60px] lg:text-[68px]">
-                Dream body with fitness
-                <span className="text-[var(--color-fitness-neon)]">.</span>
+              {/* Headline */}
+              <h1
+                className="hero-in hero-d2 mt-8 text-[52px] font-black leading-[0.94] sm:text-[68px] lg:text-[80px]"
+                style={{ fontFamily: "var(--font-korolev-condensed)" }}
+              >
+                Dream body
+                <br />
+                with fitness
+                <span style={{ color: "#A3E635" }}>.</span>
               </h1>
 
-              <p className="mt-4 max-w-xl font-[var(--font-urbanist)] text-[15px] leading-[1.7] text-[#6B7280]">
-                Want your body to be healthy, join our program with directions according to
-                your body's goals.
+              {/* Description */}
+              <p
+                className="hero-in hero-d3 mt-6 max-w-md text-[15px] leading-[1.7] text-[#6B7280]"
+                style={{ fontFamily: "var(--font-urbanist)" }}
+              >
+                Want your body to be healthy, join our program with directions
+                according to your body's goals.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-4">
-                <button className="rounded-[6px] bg-[var(--color-fitness-neon)] px-7 py-3 text-[11px] font-black uppercase tracking-[0.3em] text-[#111111]">
+              {/* CTA buttons */}
+              <div className="hero-in hero-d4 mt-8 flex flex-wrap gap-4">
+                <button className="btn-glow rounded-[6px] bg-[#A3E635] px-7 py-3 text-[11px] font-black uppercase tracking-[0.3em] text-[#111111]">
                   START NOW
                 </button>
-                <button className="flex items-center gap-3 rounded-[6px] border border-[#E5E7EB] bg-white px-6 py-3 text-[11px] font-black uppercase tracking-[0.3em] text-[#111111]">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#111111]">
-                    <svg
-                      width="10"
-                      height="10"
-                      viewBox="0 0 10 10"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M2 1.5L8 5L2 8.5V1.5Z" fill="#111111" />
+                <button className="group flex items-center gap-3 rounded-[6px] border border-[#E5E7EB] bg-white px-6 py-3 text-[11px] font-black uppercase tracking-[0.3em] text-[#111111] transition-colors hover:bg-[#F9F9F9]">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#111111] transition-colors group-hover:bg-[#111111]">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                      <path d="M2 1.5L8 5L2 8.5V1.5Z" className="transition-colors group-hover:fill-white" fill="#111111" />
                     </svg>
                   </span>
                   TRAINING DEMO
                 </button>
               </div>
             </div>
-            </div>
           </div>
         </div>
 
-        <div className="relative col-span-1 min-h-[420px] overflow-hidden bg-[#111111] lg:col-span-5 lg:min-h-screen">
+        {/* ── RIGHT PANEL — image ── */}
+        <div
+          className="hero-in-fade hero-d1 relative col-span-1 overflow-hidden bg-[#111111] lg:col-span-5"
+          style={{ minHeight: "50vh" }}
+        >
           <img
             src={heroImage}
-            alt="Athlete taking a break outdoors"
-            className="absolute inset-0 h-full w-full object-cover"
-            loading="lazy"
+            alt="Athlete training outdoors"
+            className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 hover:scale-[1.03]"
+            loading="eager"
           />
 
+          {/* PREV / NEXT */}
           <div className="absolute bottom-0 right-0 flex">
             <button
-              className="flex h-24 w-24 items-center justify-center bg-[var(--color-fitness-neon)] text-[11px] font-black uppercase tracking-[0.3em] text-[#111111]"
+              className="flex h-20 w-20 items-center justify-center bg-[#A3E635] text-[10px] font-black uppercase tracking-[0.3em] text-[#111111] transition-all hover:brightness-110 hover:-translate-y-0.5"
               aria-label="Previous slide"
             >
               PREV
             </button>
             <button
-              className="relative flex h-24 w-[112px] items-center justify-center overflow-hidden bg-[#111111] text-[11px] font-black uppercase tracking-[0.3em] text-white"
+              className="relative flex h-20 w-24 items-center justify-center overflow-hidden bg-[#111111] text-[10px] font-black uppercase tracking-[0.3em] text-white transition-all hover:brightness-125"
               aria-label="Next slide"
             >
               <img
                 src={previewImage}
-                alt="Preview"
-                className="absolute inset-0 h-full w-full object-cover opacity-70"
-                loading="lazy"
+                alt="Preview of next slide"
+                className="absolute inset-0 h-full w-full object-cover opacity-60 transition-opacity hover:opacity-80"
               />
-              <div className="absolute inset-2 border border-dashed border-white/60" />
+              <div className="absolute inset-2 border border-dashed border-white/50" />
               <span className="relative z-10">NEXT</span>
             </button>
           </div>
         </div>
 
-        <div className="col-span-full border-t border-[#E5E7EB] bg-white">
-          <div className="ticker mx-auto w-full max-w-6xl px-6 py-4">
+        {/* ── TICKER BAR ── */}
+        <div className="col-span-full border-t border-[#E5E7EB] bg-white h-16">
+          <div className="ticker w-full py-4">
             <div className="ticker-track">
-              <div className="ticker-content font-[var(--font-urbanist)] text-[10px] font-semibold uppercase tracking-[0.28em] text-[#111111]">
-                <span className="font-[var(--font-korolev-condensed)] text-[12px]">L PLANS</span>
-                <span className="h-1.5 w-1.5 rounded-full border border-[var(--color-fitness-neon)] bg-transparent" />
-                <span>OUR GYM HAS BEEN PRESENT FOR OVER 20 YEARS</span>
-                <span className="h-1.5 w-1.5 rounded-full border border-[var(--color-fitness-neon)] bg-transparent" />
-                <span>JOIN THE 10000+ PERSON TRUSTING US</span>
-                <span className="h-1.5 w-1.5 rounded-full border border-[var(--color-fitness-neon)] bg-transparent" />
-                <span>SUBSCRIBE CRAFTO FITNESS AND GET A SPECIAL DISCOUNT</span>
-              </div>
-              <div
-                className="ticker-content font-[var(--font-urbanist)] text-[10px] font-semibold uppercase tracking-[0.28em] text-[#111111]"
-                aria-hidden="true"
-              >
-                <span className="font-[var(--font-korolev-condensed)] text-[12px]">L PLANS</span>
-                <span className="h-1.5 w-1.5 rounded-full border border-[var(--color-fitness-neon)] bg-transparent" />
-                <span>OUR GYM HAS BEEN PRESENT FOR OVER 20 YEARS</span>
-                <span className="h-1.5 w-1.5 rounded-full border border-[var(--color-fitness-neon)] bg-transparent" />
-                <span>JOIN THE 10000+ PERSON TRUSTING US</span>
-                <span className="h-1.5 w-1.5 rounded-full border border-[var(--color-fitness-neon)] bg-transparent" />
-                <span>SUBSCRIBE CRAFTO FITNESS AND GET A SPECIAL DISCOUNT</span>
-              </div>
+              {[0, 1].map((i) => (
+                <div
+                  key={i}
+                  className="ticker-content text-[16px] font-semibold uppercase tracking-[0.28em] text-[#111111]"
+                  style={{ fontFamily: "var(--font-urbanist)" }}
+                  aria-hidden={i === 1 ? "true" : undefined}
+                >
+                  <span style={{ fontFamily: "var(--font-korolev-condensed)", fontSize: "16px" }}>
+                    ALL PLANS
+                  </span>
+                  <span className="h-1.5 w-1.5 rounded-full border border-[#A3E635]" />
+                  <span>OUR GYM HAS BEEN PRESENT FOR OVER 20 YEARS</span>
+                  <span className="h-1.5 w-1.5 rounded-full border border-[#A3E635]" />
+                  <span>JOIN THE 10000+ PERSON TRUSTING US</span>
+                  <span className="h-1.5 w-1.5 rounded-full border border-[#A3E635]" />
+                  <span>SUBSCRIBE CRAFTO FITNESS AND GET A SPECIAL DISCOUNT</span>
+                  <span className="h-1.5 w-1.5 rounded-full border border-[#A3E635]" />
+                  <span>WE WORKING LAST 25 YEARS</span>
+                  <span className="h-1.5 w-1.5 rounded-full border border-[#A3E635]" />
+                </div>
+              ))}
             </div>
           </div>
         </div>

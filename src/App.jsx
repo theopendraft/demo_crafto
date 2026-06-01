@@ -6,8 +6,11 @@ import SelfTalkSteps from "./components/SelfTalkSteps.jsx";
 import TrainerShowcase from "./components/TrainerShowcase.jsx";
 import Testimonials from "./components/Testimonials.jsx";
 import Footer from "./components/Footer.jsx";
+import { useScrollReveal } from "./hooks/useScrollReveal.js";
 
 export default function App() {
+  useScrollReveal();
+
   return (
     <div className="min-h-screen bg-white text-[#111111]">
       <main>

@@ -1,7 +1,7 @@
 export default function TrustBar() {
   return (
     <section className="border-y border-gray-800 bg-black/30 py-8">
-      <div className="mx-auto w-full max-w-6xl px-6">
+      <div className="mx-auto w-full max-w-7xl px-6">
         <div className="grid gap-6 text-sm md:grid-cols-3">
           <p className="font-display uppercase tracking-[0.22em] text-white">
             OUR GYM HAS BEEN PRESENT FOR OVER 20 YEARS

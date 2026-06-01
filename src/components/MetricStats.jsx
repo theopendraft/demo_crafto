@@ -1,67 +1,69 @@
 import profileImage from "../public/demo-elearning-03.png";
+import { CountUp } from "./CountUp.jsx";
 
 const stats = [
-  { value: "4566", label: "HOURS EXERCISE" },
-  { value: "5635", label: "TOTAL EQUIPMENT" },
-  { value: "6546", label: "TRAINING PEOPLE" },
-  { value: "6365", label: "EXPERT TRAINERS" }
+  { value: "4566", label: "Hours Exercise" },
+  { value: "5635", label: "Total Equipment" },
+  { value: "6546", label: "Training People" },
+  { value: "6365", label: "Expert Trainers" },
 ];
 
 export default function MetricStats() {
   return (
     <section className="bg-white py-12 text-[#111111]">
-      <div className="mx-auto w-full max-w-6xl px-6">
-        <div className="flex flex-wrap items-center justify-between gap-6">
+      <div className="mx-auto w-full max-w-7xl px-6">
+
+        {/* ── Top bar ── */}
+        <div data-anim="up"
+          className="flex flex-wrap items-center justify-between gap-6 border-b border-[#E5E7EB] pb-8">
           <div className="flex items-center gap-4">
-            <img
-              src={profileImage}
-              alt="Student profile"
-              className="h-20 w-20 object-cover"
-              loading="lazy"
-            />
-            <p className="font-[var(--font-urbanist)] text-sm text-[#6B7280]">
-              Fitness courses from <span className="font-semibold underline">experts</span>.
+            <img src={profileImage} alt="Expert instructors"
+              className="h-16 w-16 flex-shrink-0 rounded-full object-cover ring-2 ring-[#E5E7EB] transition-transform hover:scale-105"
+              loading="lazy" />
+            <p className="text-sm text-[#6B7280]" style={{ fontFamily: "var(--font-urbanist)" }}>
+              Fitness courses from{" "}
+              <span className="font-semibold text-[#111111] underline underline-offset-2">experts</span>.
             </p>
           </div>
 
           <div className="flex items-center gap-4">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full ">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M4 19H20" stroke="#111111" strokeWidth="1.5" />
-                <path d="M6 16V10" stroke="#111111" strokeWidth="1.5" />
-                <path d="M12 16V6" stroke="#111111" strokeWidth="1.5" />
-                <path d="M18 16V12" stroke="#111111" strokeWidth="1.5" />
+            <div className="flex h-10 w-10 items-center justify-center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M4 19H20" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" />
+                <path d="M6 16V10" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" />
+                <path d="M12 16V6" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" />
+                <path d="M18 16V12" stroke="#111111" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
             </div>
-            <span className="w-px self-stretch bg-[#E5E7EB]" aria-hidden="true" />
+            <span className="h-10 w-px bg-[#E5E7EB]" aria-hidden="true" />
             <div>
-              <p className="font-[var(--font-urbanist)] text-sm font-semibold text-[#111111]">
-                Progress report
-              </p>
-              <p className="font-[var(--font-urbanist)] text-xs text-[#9CA3AF]">
-                Lorem ipsum dolor consectetur.
-              </p>
+              <p className="text-sm font-semibold text-[#111111]"
+                style={{ fontFamily: "var(--font-urbanist)" }}>Progress report</p>
+              <p className="text-xs text-[#9CA3AF]"
+                style={{ fontFamily: "var(--font-urbanist)" }}>Track your fitness journey.</p>
             </div>
-            <span className="text-lg text-[#111111]">&#8594;</span>
+            <span className="arrow-nudge text-lg text-[#111111]">&#8594;</span>
           </div>
         </div>
 
-        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((stat) => (
-            <div key={stat.label} className="space-y-2 text-center">
-              <div className="-space-y-2 ">
-              <p className="font-[var(--font-korolev-condensed)] text-3xl font-black">
-                {stat.value}
+        {/* ── Stats grid ── */}
+        <div className="mt-2 grid grid-cols-2 divide-x divide-y divide-[#E5E7EB] lg:grid-cols-4 lg:divide-y-0">
+          {stats.map((stat, i) => (
+            <div
+              key={stat.label}
+              data-anim="up"
+              data-delay={String(i * 100)}
+              className="group flex flex-col items-center gap-2 px-4 py-10 transition-colors hover:bg-[#F9FAFB]"
+            >
+              <p
+                className="text-[72px] font-black leading-none tracking-tight sm:text-[80px] lg:text-[90px]"
+                style={{ fontFamily: "var(--font-korolev-condensed)" }}
+              >
+                <CountUp value={stat.value} />
               </p>
-              <span className="mx-auto block h-1 w-1/3 rounded-full bg-[var(--color-fitness-neon)]" />
-              </div>
-              <p className="font-[var(--font-urbanist)] text-[11px] font-semibold uppercase tracking-[0.2em] text-[#6B7280]">
+              <span className="h-0.5 w-16 bg-[#A3E635] transition-all group-hover:w-24" />
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#6B7280]"
+                style={{ fontFamily: "var(--font-urbanist)" }}>
                 {stat.label}
               </p>
             </div>

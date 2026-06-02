@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import circularLabelImage from "../public/demo-gym-and-fitness-home-04.png.webp";
-import centerLabelImage from "../../assets-crafto-2026-06-01/PNG/demo-gym-and-fitness-home-05.png";
+import centerLabelImage from "../public/demo-gym-and-fitness-home-03.png.webp";
 import strengthImage from "../../assets-crafto-2026-06-01/JPG/disciplines/demo-gym-and-fitness-home-06.jpg";
 import crossfitImage from "../../assets-crafto-2026-06-01/JPG/disciplines/demo-gym-and-fitness-home-07.jpg";
 import balanceImage from "../../assets-crafto-2026-06-01/JPG/disciplines/demo-gym-and-fitness-home-08.jpg";

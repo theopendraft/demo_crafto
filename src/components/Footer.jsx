@@ -22,7 +22,7 @@ export default function Footer() {
     <footer className="bg-[#1C1C1C] text-white">
 
       {/* ── Photo strip ── */}
-      <div className=" relative -top-16 grid grid-cols-3 sm:grid-cols-6 px-14">
+      <div className="relative -top-16 grid grid-cols-3 sm:grid-cols-6 px-2 sm:px-8 lg:px-14">
         {galleryImages.map(({ src, alt }, i) => (
           <div key={i} className="aspect-square overflow-hidden">
             <img

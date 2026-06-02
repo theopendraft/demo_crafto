@@ -137,7 +137,7 @@ export default function Benefits() {
                 <img
                   src={mainSlideImage}
                   alt="Athlete training session"
-                  className="w-full p-14 object-cover"
+                  className="w-full p-4 sm:p-8 lg:p-14 object-cover"
                   loading="lazy"
                 />
               </div>

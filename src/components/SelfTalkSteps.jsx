@@ -91,7 +91,7 @@ export default function SelfTalkSteps() {
             </div>
 
             {/* Floating activity card */}
-            <div className="card-lift absolute -left-4 bottom-8 w-48 overflow-hidden rounded-xl border border-[#E5E7EB] bg-white shadow-xl sm:-left-6">
+            <div className="card-lift absolute left-3 bottom-8 w-44 overflow-hidden rounded-xl border border-[#E5E7EB] bg-white shadow-xl sm:-left-4 lg:-left-6">
               <div className="relative mx-4 mt-4 h-24 overflow-hidden rounded-lg bg-[#E5E7EB]">
                 <img src={sideCardImage} alt="Morning run preview"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 hover:scale-110"

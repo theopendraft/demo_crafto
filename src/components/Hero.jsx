@@ -36,7 +36,7 @@ export default function Hero() {
           </div>
 
           {/* Content */}
-          <div className="relative z-10 flex h-full items-center px-6 pb-12 pt-28 lg:pl-24 lg:pr-10 lg:pt-40">
+          <div className="relative z-10 flex h-full items-center px-6 pb-10 pt-24 sm:pb-12 sm:pt-28 lg:pl-24 lg:pr-10 lg:pt-40">
             <div className="w-full max-w-lg">
 
               {/* WOW badge */}
@@ -54,7 +54,7 @@ export default function Hero() {
 
               {/* Headline */}
               <h1
-                className="hero-in hero-d2 mt-8 text-[52px] font-black leading-[0.94] sm:text-[68px] lg:text-[80px]"
+                className="hero-in hero-d2 mt-8 text-[40px] font-black leading-[0.94] sm:text-[60px] lg:text-[80px]"
                 style={{ fontFamily: "var(--font-korolev-condensed)" }}
               >
                 Dream body

@@ -151,9 +151,9 @@ export default function Disciplines() {
             </div>
 
             {/* ── Tabs ── */}
-            <div className="flex flex-wrap items-stretch border-t border-[#E5E7EB] bg-white">
+            <div className="flex overflow-x-auto hide-scrollbar items-stretch border-t border-[#E5E7EB] bg-white">
               {slides.map((slide, i) => (
-                <div key={slide.label} className="flex flex-1 items-stretch min-w-[80px]">
+                <div key={slide.label} className="flex flex-1 items-stretch min-w-[70px]">
                   <button
                     onClick={() => setActiveIndex(i)}
                     className={`relative flex-1 px-4 py-4 text-[11px] font-semibold uppercase tracking-[0.25em] transition-colors duration-200 ${

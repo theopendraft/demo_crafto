@@ -18,7 +18,7 @@ export default function MetricStats() {
           className="flex flex-wrap items-center justify-between gap-6 border-b border-[#E5E7EB] pb-8">
           <div className="flex items-center gap-4">
             <img src={profileImage} alt="Expert instructors"
-              className="" />
+              className="h-10 w-auto object-contain" />
             <p className="text-sm text-[#6B7280]" style={{ fontFamily: "var(--font-urbanist)" }}>
               Fitness courses from{" "}
               <span className="font-semibold text-[#111111] underline underline-offset-2">experts</span>.
@@ -55,7 +55,7 @@ export default function MetricStats() {
               className="group flex flex-col items-center gap-2 px-4 py-10 transition-colors hover:bg-[#F9FAFB]"
             >
               <p
-                className="text-[72px] font-black leading-none tracking-tight sm:text-[80px] lg:text-[90px]"
+                className="text-[38px] font-black leading-none tracking-tight sm:text-[64px] lg:text-[90px]"
                 style={{ fontFamily: "var(--font-korolev-condensed)" }}
               >
                 <CountUp value={stat.value} />
